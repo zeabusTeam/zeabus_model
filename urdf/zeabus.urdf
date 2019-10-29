@@ -17,12 +17,12 @@
     <link name="sensor_imu_NED"/>
 
     <joint name="base_link_to_sensor_imu" type="fixed">
-        <origin xyz="0.16 0 0" rpy="0 0 ${-PI/2}"/>
+        <origin xyz="0.16 0 0" rpy="0 0 ${-PI}"/>
         <parent link="base_link"/>
         <child link="sensor_imu"/>
     </joint>
     <joint name="sensor_imu_to_sensor_imu_NED" type="fixed">
-        <origin xyz="0 0 0" rpy="${PI} 0 ${-PI/2}"/>
+        <origin xyz="0 0 0" rpy="${PI} 0 ${PI/2}"/>
         <parent link="sensor_imu"/>
         <child link="sensor_imu_NED"/>
     </joint>
