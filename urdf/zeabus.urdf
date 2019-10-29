@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="zeabus" xmlns::xacro="http://ros.org/wiki/xacro">
+<robot name="zeabus" xmlns:xacro="http://ros.org/wiki/xacro">
 
     <xacro:property name="PI" value="3.14159265359"/>
 
@@ -14,12 +14,13 @@
 
     <!-- About sensor part imu -->
     <link name="sensor_imu"/>
+    <link name="sensor_imu_NED"/>
+
     <joint name="base_link_to_sensor_imu" type="fixed">
-        <orgin xyz="0.16 0 0" rpy="0 0 ${-PI/2}"/>
+        <origin xyz="0.16 0 0" rpy="0 0 ${-PI/2}"/>
         <parent link="base_link"/>
         <child link="sensor_imu"/>
     </joint>
-    <link name="sensor_imu_NED"/>
     <joint name="sensor_imu_to_sensor_imu_NED" type="fixed">
         <origin xyz="0 0 0" rpy="${PI} 0 ${-PI/2}"/>
         <parent link="sensor_imu"/>
@@ -56,6 +57,6 @@
         <origin xyz="0 0 0" rpy="${PI / 2} 0 ${ PI / -2}"/>
         <parent link="front_camera"/>
         <child link="front_camera_optical"/>
-
+    </joint>
 
 </robot>
