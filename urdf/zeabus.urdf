@@ -27,6 +27,14 @@
         <child link="sensor_imu_NED"/>
     </joint>
 
+    <!-- About sensor part pressure -->
+    <link name="sensor_pressure"/>
+    <joint name="base_link_to_sensor_pressure" type="fixed">
+        <origin xyz="-0.55 0 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="sensor_pressure"/>
+    </joint>
+
     <!-- About sensor part bottom_camera -->
     <link name="bottom_camera"/>
     <link name="bottom_camera_optical"/>
