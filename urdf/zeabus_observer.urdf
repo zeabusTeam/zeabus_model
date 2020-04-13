@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<robot name="zeabus_observer" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:property name="PI" value="3.14159265359"/>
+
+    <!-- base link use to centor in normal real world -->       
+    <!-- link use instead robot stl use to look easy to watch -->
+ 
+    <!-- Warning paramter RPY for rotation input is order roll pitch yaw -->
+    <!-- but in real transformation will use about play rotation order is yaw pitch roll-->
+
+    <link name="base_link_observer"/>
+
+    <!-- About sensor part bottom_camera -->
+    <link name="bottom_camera_observer"/>
+ 
+    <joint name="base_link_observer_bottom_camera_observer" type="fixed">
+        <origin xyz="0.26 0 -0.1" rpy="0 ${PI / 2 } 0"/>
+        <parent link="base_link_observer"/>
+        <child link="bottom_camera_observer"/>
+    </joint>
+ 
+    <!-- About sensor part front_camera -->
+    <link name="front_camera_observer"/>
+ 
+    <joint name="base_link_observer_front_camera_observer" type="fixed">
+        <origin xyz="0.43 0 0" rpy="0 0 0"/>
+        <parent link="base_link_observer"/>
+        <child link="front_camera_observer"/>
+    </joint>
+ 
+</robot>
