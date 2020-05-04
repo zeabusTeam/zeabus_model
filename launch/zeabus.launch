@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <include file="$(find zeabus_model)/launch/zeabus_model.launch"/>
+    <include file="$(find zeabus_model)/launch/zeabus_observer_model.launch"/>
+ 
+</launch>
